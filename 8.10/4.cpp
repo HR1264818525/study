@@ -7,7 +7,7 @@ namespace my
 {
     int *expand(int *oldarr,int oldlen,int newlen)
     {
-        int *newarr = new int[newlen];
+        int *newarr = new int[newlen]();
         for (int i = 0; i < oldlen; i++)
         {
             newarr[i] = oldarr[i];
@@ -51,11 +51,11 @@ int main()
     my::printarr(array,len);
     
     int newlen = 10;
-    len = newlen;
+    // len = newlen;
     
     array = my::expand(array,len,newlen);
     cout<<"扩容后数组：";
-    my::printarr(array,len);
+    my::printarr(array,newlen);
     my::freearr(array);
     return 0;
 }
